@@ -1,0 +1,7 @@
+Alice and Bernd set up some services they are using to talk about their secrets. I want to know what, but they're using PGP. This has to be secure, right?
+They placed their public keys on a website and even bragged about the secure scheme they constructed just to keep me out :-(
+Alice: endpoint <link to service running ba_server.py>:5668, key <link to alice.asc>
+Bernd: endpoint <link to service running ba_server.py>:5669, key <link to bernd.asc>
+Scheme: <link zu scheme.txt>
+
+Can you figure out what they are talking about?
