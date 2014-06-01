@@ -1,0 +1,32 @@
+
+Stego 300 - Hidden below
+===========================
+
+Description
+------------
+They never found the monster. I hope you have more success with the secret hidden somewhere in the lake.
+Hash it with MD5 to obtain the flag and sumbit in the format sqrts{hash}
+
+
+Steps
+-------
+Find original cover image
+	- Reverse image search / Google for "Loch Ness"
+	- http://en.wikipedia.org/wiki/Loch_Ness_Monster
+	- http://en.wikipedia.org/wiki/File:Hoaxed_photo_of_the_Loch_Ness_monster.jpg
+	- Download it
+	
+Substract from stego
+	- Open in Stegsolve
+	- Analyse -> Image Combiner -> SUB
+
+
+Solution
+----------
+#nofilter -> sqrts{6a58024a24f8be7510abe4de139d1eee}
+
+
+Possible hints
+---------------
+1. http://en.wikipedia.org/wiki/Loch_Ness_Monster
+2. Yeah it's very SUBtle.

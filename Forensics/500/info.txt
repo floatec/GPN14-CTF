@@ -1,0 +1,33 @@
+
+Stego 500 - Come closer...
+===========================
+
+Description
+-------------
+You have come this far, but I think that's still not close enough. Convince me otherwise if you found something.
+Rememeber to hash the hidden message with MD5 to obtain the flag.
+
+
+Steps
+------
+Extract inner file
+	- Open in hexeditor
+	- Search for FF D8
+	- Copy everything until end (FF D9) into a new file
+	
+Solve stereogram
+	Either:
+		- have good eyes
+	or	- use stegsolve -> anaylse -> stereogram solver
+	or 	- use http://magiceye.ecksdee.co.uk/
+
+
+Solution
+----------
+st3r3o -> sqrts{6ce52aae5507b069eeeb64d4cf0c7de3}
+
+
+Possible hints
+---------------
+1. This is a rather big file, isn't it?
+2. https://www.youtube.com/watch?v=pCZ9Cycvqrw

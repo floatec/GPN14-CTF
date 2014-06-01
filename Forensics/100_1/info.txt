@@ -1,0 +1,29 @@
+
+Stego 100 - Super Quadragon
+==============================
+
+Description
+------------
+Quadragon: "The thingy you call a square when your high." Now go and find the hidden secret.
+Hash it with MD5 to obtain the flag and sumbit in the format sqrts{hash}
+
+
+Steps
+-------
+Discover there is something hidden in the middle
+	Either:
+		- Zoom + good eyes
+	or 	- use stegsolve -> random color map
+	
+Convert from Braille 
+	http://www.bluemountain.com/blog/wp-content/uploads/2011/01/braille.jpg
+
+
+Solution
+----------
+awesome -> sqrts{be121740bf988b2225a313fa1f107ca1}
+
+
+Possible hints
+---------------
+If you don't see it you must be blind.
