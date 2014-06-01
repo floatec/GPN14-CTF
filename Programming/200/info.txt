@@ -1,0 +1,26 @@
+
+Programming 200 - H³ - hackers hack hackers
+=================================
+
+Description
+------------
+H³ - hackers hack hackers: "We retrieved some data from another hacker to login into his secure website. We think there is some information which is useful for us.
+We tried to login, but the captcha seems broken. Use the name "pearce" and the password "Elb%hzJ4GL=6/Y+7[AlNu\/uAnF>p:v#1ZdhkOWH" to login and retrive the data for us.
+
+
+
+Steps
+-------
+Load index.php to geht the session cookie. Request a new captcha with the cookie. Order the captcha line by line by pixel value asc or desc, and save it as image.
+Then use gocr with the image to get the captcha string. Finally send the login credentials with the captcha to index.php, but you must be quicker then a second before the captcha expires.
+
+
+Solution
+----------
+sqrts{dd64a3798ae4423018d1fdeaa9a9ec26}
+
+
+Possible hints
+---------------
+Try to reasemble the captcha somehow
+The captcha is only valid for a blink of an eye
