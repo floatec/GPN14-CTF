@@ -1,0 +1,3 @@
+Where is Waldo? … Ähm … Sorry we are looking for Kurt…  
+
+Antwort: md5 has lowercase + without space( Beispiel „Alle mögen Bier“ => „allemögenbier“)
