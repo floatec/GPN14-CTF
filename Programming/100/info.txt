@@ -1,0 +1,26 @@
+
+Programming 100 - weird garbage
+=================================
+
+Description
+------------
+weird garbage: We found an enemy server with an open socket. When connecting we only get strange Symbols, maybe you can decrypt them.
+
+
+
+Steps
+-------
+Connect to the Server and get several Strings which are brainfuck code which needs to be interpreted.
+Then you will get three chars of the Flag. If you have enough parts you can reassemble the Flag
+
+
+Solution
+----------
+sqrts{16f3a102e8cb187da3662be549e417a7}
+
+
+Possible hints
+---------------
+1. The garbage looks always similar, maybe it is code
+2. Try to combine the garbage
+
