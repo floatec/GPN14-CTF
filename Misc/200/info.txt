@@ -1,0 +1,26 @@
+Misc 200 - PDfun
+=================================
+
+Description
+------------
+PDFun: We found this PDF File, but wie didn't know how to gain the information hidden in it
+
+
+Steps
+-------
+Extract RAR5 archive at the end of file which is xored with 42. Bruteforce the password which is "force". Extract the flag.txt which is rot47 encoded.
+There you get the hint that the password consits of two words and you get the IV for the aes decryption.
+Within the PDF there are several morsecode parts which you need to bring into the right order to get "angecryption".
+NOw you have everything to decrypt the pdf via bruteforcing. The password is "steganographyfun" and the IV is given.
+
+
+Solution
+----------
+sqrts{2d7ed38bb2bd66405c929620e0db22ac}
+
+
+Possible hints
+---------------
+Search for hints within the PDF file
+Find the compressed archive and extract the Information
+
