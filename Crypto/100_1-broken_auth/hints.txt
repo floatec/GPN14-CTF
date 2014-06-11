@@ -1,0 +1,11 @@
+- beide endpunkte können angegriffen werden
+- beide werden benötigt zum Lösen, aber es reicht wenn man Ende von einem die Flag entschlüsseln kann
+- Server bestätigt sich zuerst durch Entschlüsselung beliebiger Daten
+- Vorgehensweise:
+	1. Sende random Nonce, random Key (merken!) verschlüsselt mit PK von A an A
+	2. A entschlüsselt Nonce + an B verschlüsselten eigenen Nonce und Key
+	3. Sende Werte von A als Nonce an B, jeweils in eigener Verbindung mit random schlüssel (irrelevant)
+	4. B entschlüsselt jeweils die Werte (auch den Key!)
+	5. Schließe Verbindungen an B
+	6. Sende von B entschlüsselten Nonce an A zur Verifikation
+	7. Nutze eigenen generierten Key||entschlüsselten Key von A um mit AES verschlüsselten Challenge-Key von A zu entschlüsseln

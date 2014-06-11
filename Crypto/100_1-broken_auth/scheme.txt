@@ -2,7 +2,7 @@ Notation:
     U: Connecting user.
     S: Service.
     Nx: Random nonce, issued by x.
-    Kx: Random symmetric key owned by x.
+    Kx: Session specific random symmetric key owned by x.
     Px: Known public key of x.
     {x}k: Encrypted message x using public key cryptography and key k.
     [x]k: Encrypted message x using symmetric cryptography and key k.
@@ -14,7 +14,7 @@ U   ---------->   S:
 
     <----------
  Nu, {Ns}Pu, {Ks}Pu
- 
+
     ---------->
         Ns
  

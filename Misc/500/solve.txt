@@ -1,0 +1,6 @@
+- Das ist quasi ein RF signal (complex time-domain signal)
+- Wurde über matlab mit dem seemoo.m script aus einem SW-bild generiert
+- Lösungsweg ist es mit den richtigen Parametern in einem wasserfall anzugucken, flag sollte dann bei richtiger Einstellung gut lesbar sein (siehe solve.png)
+- Beispiellösung mit dem baudline tool: cat signal.bin | ./baudline -reset -samplerate 1800000 -channels 2 -format u8 -quadrature -stdin -flipcomplex
+
+- Eventuell als hint später script veröffentlichen
