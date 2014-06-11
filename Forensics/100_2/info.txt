@@ -1,0 +1,30 @@
+
+Forensics 100? (oder weniger) - Doge_security
+==============================================
+
+
+Description
+------------
+We discovered an unknown security system and need to find what secrets are stored there. Find them and send them to us.
+MD5 the flag and sumbit in the format sqrts{MD5}
+
+
+
+
+
+
+
+
+
+
+
+Steps
+---------
+open TCP streams 1 and 2, decode the binary and get the first password.
+open the watchdoge2.jpg and extract the zip with first password.
+open dogereminder.png and understand the format of the second password (content of first zip).
+open flag.zip with second password.
+
+Solution
+---------
+wowee_what_an_ep1c_challenge -> sqrts{0cf51b90b4b069f8ef7f9d72d70edb44}
