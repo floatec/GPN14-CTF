@@ -1,0 +1,22 @@
+<h3>Exception information:</h3>
+
+         <p><strong>Date:</strong> Jun 11, 2014 13:17PM</p>
+
+         <p><strong>Message:</strong> SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'name' at row 1</p>
+
+         <p><strong>Code:</strong> 22001</p>
+
+         <p><strong>File:</strong> /Applications/XAMPP/xamppfiles/htdocs/kochchef/app/helpers/database.php</p>
+
+         <p><strong>Line:</strong> 42</p>
+
+         <h3>Stack trace:</h3>
+
+         <pre>#0 /Applications/XAMPP/xamppfiles/htdocs/kochchef/app/helpers/database.php(42): PDOStatement->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/kochchef/app/models/rezept_model.php(20): Database->insert('rezepte', Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/kochchef/app/controllers/rezepte.php(41): Rezept_Model->insert(Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/kochchef/app/core/router.php(88): Rezepte->add()
+#4 /Applications/XAMPP/xamppfiles/htdocs/kochchef/index.php(28): Router::dispatch()
+#5 {main}</pre>
+
+         <hr />
