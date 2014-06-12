@@ -47,7 +47,7 @@ if(isset($_POST) && !empty($_POST))
     <div class="panel panel-default">
   <div class="panel-heading"><h3 class="panel-title"><strong>Flag: </strong></h3></div>
   <div class="panel-body">
-  	<?php echo $flag ?>
+  	<?php echo $flag; ?>
   </div>
 </div>
 </div>
@@ -59,20 +59,20 @@ if(isset($_POST) && !empty($_POST))
   <div class="panel-heading"><h3 class="panel-title"><strong>Sign in </strong></h3></div>
   <div class="panel-body">
    <form role="form" method="post">
-  <div class="form-group <?php echo (isset($errarr['password']) ? "has-error" : "") ?>">
+  <div class="form-group <?php echo (isset($errarr['password']) ? "has-error" : ""); ?>">
     <label for="user">Username</label>
     <input type="text" class="form-control" style="border-radius:5px" name="user" id="user" placeholder="Enter username">
   </div>
-  <div class="form-group <?php echo (isset($errarr['password']) ? "has-error" : "") ?>">
+  <div class="form-group <?php echo (isset($errarr['password']) ? "has-error" : ""); ?>">
     <label for="password">Password <a href="#">(forgot password)</a></label>
     <input type="password" class="form-control" style="border-radius:5px" name="password" id="password" placeholder="Password">
     <?php echo (isset($errarr['password']) ? $errarr['password'] : "")?>
   </div>
-    <div class="form-group <?php echo (isset($errarr['captcha']) ? "has-error" : "") ?>">
+    <div class="form-group <?php echo (isset($errarr['captcha']) ? "has-error" : ""); ?>">
     <label for="captcha">Captcha </label>
     <p align="center"><img src="image.php" alt="captcha"></p>
     <input type="captcha" class="form-control" style="border-radius:5px" name="captcha" id="captcha" placeholder="Captcha">
-    <?php echo (isset($errarr['captcha']) ? $errarr['captcha'] : "")?>
+    <?php echo (isset($errarr['captcha']) ? $errarr['captcha'] : "");?>
   </div>
   <button type="submit" class="btn btn-sm btn-default">Sign in</button>
 </form>
