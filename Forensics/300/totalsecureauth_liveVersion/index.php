@@ -1,5 +1,5 @@
 <?php
-$key="key";
+$key="sqrts{".md5("Butterblumenkuchen")."}";
 /**
  * Created by PhpStorm.
  * User: floatec

@@ -1,3 +1,14 @@
 Fertig jetzt Braucht das Ding nur noch einen Namen! .......................... 
 
 Antwort: md5 has lowercase + without space( Beispiel „Alle mögen Bier“ => „allemögenbier“)
+
+
+bildeinbinden
+
+
+////////////////////
+Lösung aus 23
+
+
+hint it s not 42
+
