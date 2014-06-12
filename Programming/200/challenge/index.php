@@ -41,7 +41,7 @@ if(isset($_POST) && !empty($_POST))
   <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-<? if(isset($errarr['flag'])) { ?>
+<?php if(isset($errarr['flag'])) { ?>
     <div class="container" style="margin-top:30px">
 <div class="col-md-4 col-md-offset-4">
     <div class="panel panel-default">
