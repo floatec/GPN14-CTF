@@ -6,7 +6,7 @@ import hashlib
 
 from flask import Flask, render_template, request
 from PIL import Image
-import ExifTags
+import PIL.ExifTags
 
 # easy_install flask PIL
 FLAG = "sqrts{02ad35dc002a5b20e522e67ba70ca1c7}"
@@ -49,7 +49,7 @@ def upload():
         return "Invalid file type", 415
 
     exif = {
-        ExifTags.TAGS[k]: v
+        PIL.ExifTags.TAGS[k]: v
         for k, v in img._getexif().items()
         if k in ExifTags.TAGS
     }
