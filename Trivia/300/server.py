@@ -8,8 +8,8 @@ display = Display((800,600))
 cam = Camera()
 
 while True:
-	#img = cam.getImage()
-	img = Image("qr.png")
+	img = cam.getImage()
+	#img = Image("qr.png")
 	barcode = img.findBarcode()
 	if barcode:
 		data = str(barcode[0].data)
