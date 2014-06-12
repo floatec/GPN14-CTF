@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+	<title>Photo upload</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body
+  <p>
+  Please upload your antarctica photo using the following form. Allows formats: jpg. File size limit is 2 MiB.
+  </p>
+  <p style="font-weight: bold; text-decoration: underline;">We may show your photo on our video wall. If you do no want that, tick the checkbox.</p>
+  <p>
+  	<form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+  		<input name="file" type="file" size="50" accept="image/jpeg"><br>
+  		<input type="checkbox" name="hide"> Don't show my photo!<br>
+  		<input type="submit">
+  	</form>
+  </p>
+</body>
+</html>

@@ -1,0 +1,6 @@
+- Exif Daten fälschen
+- 09.06.2014 00:00:00 < exif[DateTime] < 15.06.2014 23:59:59
+- GPS lat/lon laut GPSInfo exif-feld muss Abstand < 3000km vom Südpol (90S 0W) haben
+	--> berechnet mit methode von http://www.movable-type.co.uk/scripts/latlong.html (Implementierung extern verifiziert)
+- durchführbar zB mit exiftool: exiftool -GPSMapDatum="WGS-84" -gps:GPSLatitude="70,06,51" -gps:GPSLatitudeRef="S" -gps:GPSLongitude="65,35,32" -gps:GPSLongitudeRef="W" -DateTimeOriginal="2014:06:12 02:00:00" solve.jpg
+- Werte prüfen mit exiftool -a solve.jpg
