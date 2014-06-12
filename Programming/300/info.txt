@@ -1,0 +1,23 @@
+Programming 300 - Superbrain
+=================================
+
+Description
+------------
+Superbrain: "This server wants to play with us. Try to get the flag"
+
+
+Steps
+-------
+Play mastermind. The first five rounds have no timelimit, afterwars you have to answer within 1 second.
+You need to guess the right combination which are 4 letter combinations of 0-9.
+X marks right letter on right position, O marks right letter on wrong position and - marks invalid number.
+
+Solution
+----------
+sqrts{a7564b471df5ed2f3a0189fea0234668}
+
+
+Possible hints
+---------------
+1. Superbrain you need to play Mastermind
+2. Your colors are represented by numbers
