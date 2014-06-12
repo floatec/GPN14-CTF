@@ -34,7 +34,7 @@ ADD apache.sh /etc/service/ctf/run
 #if you need to change some apache2 config
 ADD apache-site.conf /etc/apache2/sites-enabled/000-default.conf
 
-ADD ./challange/colorful_live/ /var/www/challenge
+ADD ./challenge/ /var/www/challenge
 
 RUN chown -R www-data:www-data /var/www
 RUN chmod -R 500 /var/www
