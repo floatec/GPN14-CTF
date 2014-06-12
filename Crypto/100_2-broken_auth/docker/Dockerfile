@@ -26,9 +26,12 @@ RUN apt-get install -y python python-setuptools
 RUN apt-get install -y gnupg python-crypto
 RUN easy_install python-gnupg
 
-ADD ctf.sh /etc/service/ctf/run
+RUN mkdir -p /etc/service/ctf-bernd
+ADD alice.sh /etc/service/ctf/run
+ADD bernd.sh /etc/service/ctf-bernd/run
 ADD ba_server.py /opt/ctf/
-ADD Alice-gpg /opt/ctf/
+COPY ./Alice-gpg/ /opt/ctf/Alice-gpg
+COPY ./Bernd-gpg/ /opt/ctf/Bernd-gpg
 
 RUN chown -R ctf:nogroup /opt/ctf
 
@@ -36,4 +39,4 @@ RUN chown -R ctf:nogroup /opt/ctf
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-EXPOSE 5668
+EXPOSE 5668 5669
