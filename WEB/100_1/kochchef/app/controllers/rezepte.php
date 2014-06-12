@@ -4,6 +4,9 @@ class Rezepte extends Controller {
 	public function __construct(){
 		parent::__construct();
         $this->model= $this->loadModel('rezept_model');
+        if(Session::get('loggedin') == false){
+            Url::redirect('/user');
+        }
 	}
 
 	public function index(){

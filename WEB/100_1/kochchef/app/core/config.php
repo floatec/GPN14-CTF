@@ -13,8 +13,8 @@ define('DIR','http://localhost/kochchef');
 define('DB_TYPE','mysql');
 define('DB_HOST','127.0.0.1');
 define('DB_NAME','kochchef');
-define('DB_USER','root');
-define('DB_PASS','');
+define('DB_USER','chef');
+define('DB_PASS','kochkoch');
 define('PREFIX','');
 
 //set prefix for sessions

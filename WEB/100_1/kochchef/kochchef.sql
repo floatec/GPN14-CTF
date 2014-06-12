@@ -65,3 +65,19 @@ INSERT INTO `rezepte` VALUES ('1', 'test', 'test', b'0', 'test', 'test'), ('2', 
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+
+GRANT USAGE ON *.* TO 'chef'@'127.0.0.1' IDENTIFIED BY 'kochkoch'
+WITH MAX_QUERIES_PER_HOUR 0
+MAX_UPDATES_PER_HOUR 0
+MAX_CONNECTIONS_PER_HOUR 0;
+
+GRANT Insert, Select, Index, Update ON `kochchef`.* TO `chef`@`127.0.0.1`;
+
+
+GRANT USAGE ON *.* TO 'dummy'@'127.0.0.1' IDENTIFIED BY 'dumdumdum'
+WITH MAX_QUERIES_PER_HOUR 0
+MAX_UPDATES_PER_HOUR 0
+MAX_CONNECTIONS_PER_HOUR 0;
+
+GRANT Select ON TABLE `kochchef`.`rezepte` TO `dummy`@`127.0.0.1`;

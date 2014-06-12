@@ -2,8 +2,8 @@ Disapbled For Security Reasons
 <!-- <form method="get"> <input name="user"><input type="submit" value="Search"></form>
 <?php
 $dbhost="127.0.0.1";
-$dbuser="root";
-$dbpass="";
+$dbuser="dummy";
+$dbpass="dumdumdum";
 $dbname1="kochchef";
 $db1 = mysql_connect($dbhost, $dbuser, $dbpass);
 $rv = mysql_select_db($dbname1, $db1);
@@ -21,8 +21,8 @@ $result = mysql_query($query);
 // Dies zeigt die tatsächliche Abfrage, die an MySQL gesandt wurde und den
 // Fehler. Nützlich bei der Fehlersuche
 if (!$result) {
-    $message  = 'Ungültige Abfrage: ' . mysql_error() . "\n";
-    $message .= 'Gesamte Abfrage: ' . $query;
+    $message  = 'Ungültige Abfrage: ' .htmlspecialchars(mysql_error()) . "\n";
+    $message .= 'Gesamte Abfrage: ' . htmlspecialchars($query);
     die($message);
 }
 
@@ -31,13 +31,13 @@ if (!$result) {
 // der Ressource.
 // Eine der MySQ result Funktionen muss genutzt werden
 // Siehe auch: mysql_result(), mysql_fetch_array(), mysql_fetch_row(), etc.
-echo "<h1>Profil von: ".$_GET['user']."<h2>";
+echo "<h1>Profil von: ".htmlspecialchars($_GET['user'])."<h2>";
 while ($row = mysql_fetch_array($result)) {
-    echo "<h2>".$row['name']."(".mysql_num_rows($result)." Rezepte)</h2>";
+    echo "<h2>".htmlspecialchars($row['name'])."(".mysql_num_rows($result)." Rezepte)</h2>";
 
-    echo $row['beschreibung'];
+    echo htmlspecialchars($row['beschreibung']);
     echo "<h2>Zutaten</h2>";
-    echo $row['zutaten'];
+    echo htmlspecialchars($row['zutaten']);
 }
 
 // Gebe Ressourcen, die mit der Ergebnismenge assoziiert sind, frei

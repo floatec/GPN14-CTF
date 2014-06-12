@@ -3,7 +3,7 @@
 require('app/core/autoloader.php');
 
 //define routes
-Router::get('/', 'welcome@index');
+Router::get('/', 'rezepte@index');
 
 
 Router::get('/user', 'members@index');

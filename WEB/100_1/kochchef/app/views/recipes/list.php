@@ -1,8 +1,8 @@
 <h1>Rezepte</h1>
-<a href="/hinzufuegen">Neues Rezept hinzufügen</a>
+<a href="rezepte/hinzufuegen">Neues Rezept hinzufügen</a>
 <table>	
 <tr>
-	<th class="bla_delete delete">User</th>
+	<th>User</th>
 	<th>Rezept</th>
 	<th>Beschreibung</th>
     <th>Zutaten</th>
@@ -11,10 +11,10 @@
 	if($data['recipes']){
 		foreach($data['recipes'] as $row){
 			echo "<tr>";
-			echo "<td>$row->user</td>";
-			echo "<td>$row->name</td>";
-            echo "<td>$row->beschreibung</td>";
-            echo "<td>$row->zutaten</td>";
+			echo "<td>".htmlspecialchars($row->user)."</td>";
+			echo "<td>".htmlspecialchars($row->name)."</td>";
+            echo "<td>".htmlspecialchars($row->beschreibung)."</td>";
+            echo "<td>".htmlspecialchars($row->zutaten)."</td>";
 
 			echo "</tr>";
 		}

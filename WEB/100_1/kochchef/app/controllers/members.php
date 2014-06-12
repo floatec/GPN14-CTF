@@ -101,7 +101,7 @@ class Members extends Controller {
 	public function login(){
 
 		if(Session::get('loggedin') == true){
-			Url::redirect('user/memberspage');
+			Url::redirect('/');
 		}
 
 		if(isset($_POST['submit'])){
@@ -114,7 +114,7 @@ class Members extends Controller {
 				Session::set('username',$data[0]->username);
 				Session::set('loggedin',true);
 
-				Url::redirect('/user/memberspage');
+				Url::redirect('/');
 			} else {
 				$error[] = 'Wrong username or password or account has not been activated yet';
 			}
@@ -124,14 +124,14 @@ class Members extends Controller {
 		$data['titie'] = 'Login';
 
 		$this->view->rendertemplate('header',$data);
-		$this->view->render('/user/login',$data,$error);
-		$this->view->rendertemplate('footer',$data);
+		$this->view->render('members/login',$data,$error);
+		//$this->view->rendertemplate('footer',$data);
 	}
 
 	public function memberspage(){
 
 		if(Session::get('loggedin') == false){
-			Url::redirect('members/login');
+			Url::redirect('/user');
 		}
 
 		$data['title'] = 'Memebers Page';
@@ -143,7 +143,7 @@ class Members extends Controller {
 
 	public function logout(){
 		Session::destroy();
-		Url::redirect('members');
+		Url::redirect('/');
 	}
 
 }
