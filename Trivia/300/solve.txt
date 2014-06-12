@@ -1,0 +1,5 @@
+pip install qrcode
+
+1. qr "meinnutzername" > qr.png
+2. ausdrucken/auf gerät öffnen
+3. zum tisch kommen und scnannen lassen
