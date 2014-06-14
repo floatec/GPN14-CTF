@@ -1,13 +1,17 @@
 <?php
 session_start();
-
+header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
+header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 header("Content-type: image/png");
 function RandomString($len)
 {
     $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $randstring = '';
     for ($i = 0; $i < $len; $i++) {
-        $randstring .= $characters[rand(0, strlen($characters))];
+        $x = rand(0, strlen($characters)-1);
+        
+        #echo $x."-".$characters[$x]."\n";
+        $randstring .= $characters[$x];
     }
     return $randstring;
 }
@@ -21,63 +25,41 @@ $size = 15;
 $imgWidth = 175;//200
 $imgHeight = 50;//80
 
-// Farbverlauf RGB-Wert Start und RGB-Wert Ende
-$fromRGB = array(
-    rand(0,255),
-    rand(0,255),
-    rand(0,255)
-);
-$toRGB = array(
-    rand(0,255),
-    rand(0,255),
-    rand(0,255)
-);
 
-
-
-// Randfarbe
-$colorBorder = array(
-    154,
-    53,
-    2
-);
 /* Bild erstellen */
 $img = ImageCreateTrueColor($imgWidth,$imgHeight);
-$imgout = ImageCreateTrueColor($imgWidth,$imgHeight);
-$colorB = imagecolorallocate($img,$colorBorder[0],$colorBorder[1],$colorBorder[2]);
 
 
 
-putenv('GDFONTPATH=' . realpath('.'));
-$grey = imagecolorallocate($img, 128, 128, 128);
+
+$grey[] = imagecolorallocate($img, rand(0,255), rand(0,255), rand(0,255));
+$grey[] = imagecolorallocate($img, rand(0,255), rand(0,255), rand(0,255));
+$grey[] = imagecolorallocate($img, rand(0,255), rand(0,255), rand(0,255));
+$grey[] = imagecolorallocate($img, rand(0,255), rand(0,255), rand(0,255));
+$type = rand(0,9);
+putenv('GDFONTPATH=' . realpath('./data/'.$type.'/'));
 $font = 'font.ttf';
 $text = RandomString(4);
 
 $_SESSION['captchatext'] = $text;
 $_SESSION['captchatime'] = time();
-list($left,, $right) = imageftbbox( $size, 0, $font, $text);
-$off = ($imgWidth/2 - $right/2);
-imagettftext($img, $size, 0, $off, 40,$grey, $font , $text);
+
+for ($i =0; $i < strlen($text); $i++)
+{
+    $angle = rand(-25,25);
+    list($left,, $right) = imageftbbox( $size, 0, $font, $text[$i]);
+    $off = ($imgWidth/4*$i + $imgWidth/8);
+    imagettftext($img, $size, $angle, $off, 35,$grey[$i], $font , $text[$i]);
+}
 #imagestring($img, 100, 0, 0, RandomString(10), 0xffffff);
 
 $time_end = microtime(true);
 $time = $time_end - $time_start;
-
-$a = array();
-for ($i = 0; $i < $imgHeight; $i++) 
-{
-	array_push($a, $i);
-}
-shuffle($a);
-
-for ($i = 0; $i < $imgHeight; $i++) 
-{
-	imagecopy($imgout, $img, 0, $i, 0, $a[$i], $imgWidth, 1);
-}
-#imagestring($img, 1 , 0, $imgHeight-10, ($time*1000)."ms to create" , 0);
-ImagePNG($imgout);
+imagestring($img, 1 , 0, 0, "font ".$type , 0xffffff);
+imagestring($img, 1 , 0, $imgHeight-10, ($time*1000)."ms to create" , 0);
+ImagePNG($img);
 imagedestroy($img);
-imagedestroy($imgout);
+
 
 
 ?>
