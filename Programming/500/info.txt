@@ -1,0 +1,29 @@
+
+Programming 500 - Time is up ...
+=================================
+
+Description
+------------
+We found a link to a share hoster site on which we can get some usefull data. Unfortunately we're not fast enough to enter the right captcha.
+So your task is to get the Files and us the information.
+
+
+Oh sorry, i almost forget to give you the link: http://IP/download.php?q=7bf63ebe6646c009
+
+
+Steps
+-------
+Get list.txt from given URL by solving the captcha in under 5 sec (doable by hand)
+Write a captchasolver and use the given IDs to retrive every file. The captchasolver needs to it in under 5 sec, too
+There are 10 different captcha types with each a different font. Each captcha has only four chars, which are each in
+different random collor and different orientation between -25 and 25 degree while 0 is normal orientation.
+
+Solution
+----------
+sqrts{ece8c144e67be7625e0ccf50199ad5a4}
+
+
+Possible hints
+---------------
+1. Solve all the captchas :)
+

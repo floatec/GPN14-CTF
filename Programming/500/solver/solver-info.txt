@@ -1,0 +1,6 @@
+Da mein geschriebener Solver bestandteile des jdownloader captcha solver sstemes benutzt 
+und dort sehr gut mit jdownloader verwoben ist, ist es nicht möglich dies hier rein zu packen.
+Eine kompilierte JAR datei würde vermutlich 65MB benötigen da diese auch den kompletten jdownloader enthält.
+Ich hoffe ich kann den Solver noch verfügbar machen als download irgendwie, ihn mit ins github zu legen dürfte aussichtslos sein.
+Eine aufsplittung ist nicht wirklich möglich da meine jdownloader source von august 2013 ist und auch teilweise
+stark modifiziert wurde und ich nicht weis ob es problemlos machbar ist.
