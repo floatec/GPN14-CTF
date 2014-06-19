@@ -1,5 +1,0 @@
-Generate a zip file containing all png images from the "partial data" folder.
-
-!!! ATTENTION !!!!
-DO NOT PUT flag.png THERE
-and do not generate.py there
