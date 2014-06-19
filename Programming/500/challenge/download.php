@@ -28,7 +28,7 @@ function Size($bytes)
 	$q = '';
 
 	if (isset($_REQUEST['q'])) {
-		$q = $_REQUEST['q'];
+		$q = htmlspecialchars($_REQUEST['q']);
 		$_SESSION['q'] = $q;
 	}
 	$errarr = array();
@@ -36,24 +36,22 @@ function Size($bytes)
 	{
 		if ($_SESSION['q'] != $q)
 		{
-			$errarr['captcha'] = '<span class="red">Unbekannter Fehler</span>';
+			$errarr['captcha'] = '<span class="red">Unknown Error</span>';
 		} else if (time() - $_SESSION['captchatime'] > $timediff) {
-			$errarr['captcha'] = '<span class="red">Das Captcha ist leider abgelaufen</span>';
+			$errarr['captcha'] = '<span class="red">Captcha expired</span>';
 		} else if ($_SESSION['captchatext'] != $_POST['captcha']) {
-			$errarr['captcha'] = '<span class="red">Sie haben das Captcha falsch eingegeben</span>';
+			$errarr['captcha'] = '<span class="red">Wrong Captcha</span>';
 		} else {
 			
 			    header('Content-Description: File Transfer');
 			    header('Content-Type: application/octet-stream');
-			    header('Content-Disposition: attachment; filename='.basename($filearray[$q]['file']));
+			    header('Content-Disposition: attachment; filename='.basename($filearray[$q]));
 			    header('Content-Transfer-Encoding: binary');
 			    header('Expires: 0');
 			    header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
 			    header('Pragma: public');
-			    header('Content-Length: ' . $filearray[$q]['size']);
-			    /*ob_clean();
-			    flush();*/
-			    readfile($filearray[$q]['file']);
+			    header('Content-Length: ' . filesize($filearray[$q]));
+			    readfile($filearray[$q]);
 			    exit;
 		}
 	}
@@ -75,7 +73,7 @@ function Size($bytes)
                         
             <div id="left">
                 <div id="logo">
-                    <a href="/"><img src="logo.gif" alt="" width="285" height="50" border="0"></a>
+                    <a href="/"><img src="logo.png" alt="" width="250" height="100" border="0"></a>
                 </div>
             </div>
         </div>
@@ -88,27 +86,27 @@ function Size($bytes)
 				    <div>
 				    <form action="download.php" method="post">
 				    <input type="hidden" name="q" value="<?php echo $q; ?>">
-    				<div id="file_facts"><h2>File: <span><?php echo basename($filearray[$q]['file']); ?></span></h2><div><span class="ui-icon ui-icon-calculator"></span><span class="name">Grösse:</span><span><?php echo Size($filearray[$q]['size']); ?></span></div><div><span class="ui-icon ui-icon-copy"></span><span class="name">md5:</span><span><?php echo $filearray[$q]['hash']; ?></span></div><div><span class="ui-icon ui-icon-clock"></span><span class="name">hochgeladen:</span><span><?php echo date('d.m.Y H:i',$filearray[$q]['date']); ?></span></div></div></div>
+    				<div id="file_facts"><h2>File: <span><?php echo basename($filearray[$q]); ?></span></h2><div><span class="ui-icon ui-icon-calculator"></span><span class="name">filesize:</span><span><?php echo Size(filesize($filearray[$q])); ?></span></div><div><span class="ui-icon ui-icon-copy"></span><span class="name">md5:</span><span><?php echo md5_file($filearray[$q]); ?></span></div><div><span class="ui-icon ui-icon-clock"></span><span class="name">uploaded:</span><span><?php echo date('d.m.Y H:i',filemtime($filearray[$q])); ?></span></div></div></div>
 					
 
 				    <div id="dl_captcha_c">
-				        <div id="dl_captcha" class="ui-corner-all"><div><img src="image.php" alt="captcha"></div></br><div><input name="captcha" id="captcha" type="text" autocorrect="off" autocapitalize="off" placeholder="Geben Sie den angezeigten Text ein" autocomplete="off"></div></div>
+				        <div id="dl_captcha" class="ui-corner-all"><div><img src="image.php" alt="captcha"></div></br><div><input name="captcha" id="captcha" type="text" autocorrect="off" autocapitalize="off" placeholder="Enter the shown text" autocomplete="off"></div></div>
 				    </div>
-					<div id="dl_ticket" style="display: block;"><div id="dll" style="margin: 0px; width: 500px;"><p><input type="image" src="download.png" alt="Captcha überprüfen"><br>Captcha überprüfen</a></p></div></div></form>
+					<div id="dl_ticket" style="display: block;"><div id="dll" style="margin: 0px; width: 500px;"><p><input type="image" src="download.png" alt="Captcha überprüfen"><br>check captcha</a></p></div></div></form>
 
 					<?php 
 					if (isset($errarr['captcha'])) {
 						echo '
 					    <div id="dl_info" class="ui-widget">
 					        <div class="ui-state-highlight ui-corner-all">
-					            <p class="b">Fehler:</p>'.$errarr['captcha'].'</br>
+					            <p class="b">Error:</p>'.$errarr['captcha'].'</br>
 					            </div>
 					    </div>';
 						}
 					?>
 
     				<?php } else { ?>
-    				<h1>Download nicht möglich</h1>
+    				<h1>Download not possible</h1>
     				<hr>
     				<div id="dl_failure" class="ui-widget">
 				        <div class="ui-state-highlight ui-corner-all">
@@ -116,7 +114,7 @@ function Size($bytes)
 				            <p class="b">Information:</p>
 				            <div>
 				                                                    
-				                <strong>Die angeforderte Datei konnte nicht gefunden werden!</strong>
+				                <strong>The requested file could not be found!</strong>
 				            </div>
 				        </div>
 				    </div><?php }; ?>
