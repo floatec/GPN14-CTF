@@ -1,3 +1,6 @@
+DROP DATABASE IF EXISTS `kochchef`;
+CREATE DATABASE `kochchef`;
+USE `kochchef`;
 /*
  Navicat Premium Data Transfer
 
