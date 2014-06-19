@@ -46,7 +46,7 @@ im1.save('test.png')
 im2.save('test2.png')
 
 
-for c in range(198):
+for c in range(48):
 	imt = Image.new("RGB",(512,512), "white")
 	pixt = imt.load()
 	for x in range(imt.size[0]):

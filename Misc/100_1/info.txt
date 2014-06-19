@@ -11,8 +11,8 @@ Steps
 -------
 Take every picture and add every other picture pixelwise. The right combination shows the flag in white.
 The solver search for a higher white count while adding the pixels.
-Part a is now 7ad4cb6c8151ff0a1c23eedfc06a4a62.png
-Part b is now 3f82e6c273e5e98c5de4024a948de0e4.png
+Part a is now 799ad8363031346e1eb0fb3c8134c6da.png
+Part b is now 0655cc683729e31cca373cd72b83c218.png
 
 
 
