@@ -7,12 +7,18 @@ onlyfiles = [ f for f in listdir('.') if isfile(join('.',f)) and f.endswith('.pn
 
 donefiles = []
 
-for a in onlyfiles:
 
+correctfiles = []
+
+for a in onlyfiles:
+	if a == "flag.png":
+		continue
 	ima = Image.open(a)
 	pixa = ima.load()
 	for b in onlyfiles:
 		if a == b or b in donefiles:
+			continue
+		if b == "flag.png":
 			continue
 		print "comparing: ",a,b, "  => ",
 		whitecount = 0
@@ -28,6 +34,10 @@ for a in onlyfiles:
 		print whitecount,
 
 		if whitecount >= 33000:
-			print "<================",
+			correctfiles.append(b)
+			correctfiles.append(a)
 		print
 	donefiles.append(a)
+
+
+print correctfiles[0], " and ", correctfiles[1]
