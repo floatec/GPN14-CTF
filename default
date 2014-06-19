@@ -1,0 +1,4 @@
+export MYSQL_USER=""
+export MYSQL_PASS=""
+export PORT="1689"
+# [!!!] Insert Port also in .htaccess [!!!]
