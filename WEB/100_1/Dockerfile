@@ -28,7 +28,7 @@ RUN a2enmod php5 rewrite
 RUN apt-get install -y php5-gd
 
 # mysql
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server pwgen
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server pwgen php5-mysql
 RUN rm -rf /var/lib/mysql/*
 VOLUME ["/var/lib/mysql"]
 RUN chown -R mysql:mysql /var/lib/mysql
@@ -44,11 +44,10 @@ ADD apache.sh /etc/service/ctf/run
 #if you need to change some apache2 config
 ADD apache-site.conf /etc/apache2/sites-enabled/000-default.conf
 
-ADD ./kochchef/ /var/www/challenge
-ADD ./kochchef.sql /opt/ctf/init.sql
+ADD ./kochchef/ProfileView.php /var/www/challenge/index.php
 
 RUN chown -R www-data:www-data /var/www
-RUN chmod -R 500 /var/www
+RUN chmod -R 700 /var/www
 RUN service apache2 restart
 
 

@@ -1,4 +1,4 @@
-Disapbled For Security Reasons
+Disabled For Security Reasons
 <!-- <form method="get"> <input name="user"><input type="submit" value="Search"></form>
 <?php
 $dbhost="127.0.0.1";
