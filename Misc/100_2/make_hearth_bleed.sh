@@ -28,7 +28,7 @@ echo "Downgrading openssl"
 apt-get install -y --force-yes openssl=1.0.1-4ubuntu3 libssl1.0.0=1.0.1-4ubuntu3
 
 echo "Installing Apache2"
-apt-get install -y apache2
+apt-get install -y apache2 php5
 
 echo "Enabling SSL"
 a2enmod ssl
